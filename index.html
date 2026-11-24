@@ -125,6 +125,15 @@
     .event .address { font-weight: 500; font-size: 1.15rem; }
     .event .btn { min-width: 260px; margin-top: .9rem; text-transform: none; letter-spacing: .02em; font-size: 1.1rem; }
     .event .btn:first-of-type { margin-top: 2rem; }
+    .days { display: grid; grid-template-columns: 1fr 1fr; max-width: 1000px; margin: 5rem auto 0; }
+    .day-card { text-align: center; padding: 1.5rem 2.5rem; }
+    .day-card + .day-card { border-left: 1px solid var(--ink); }
+    .day-num { font-family: var(--script); font-size: 2.4rem; line-height: 1; color: var(--ink); }
+    .day-card h3 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .1em; font-size: clamp(1.4rem, 2.3vw, 1.9rem); line-height: 1.2; color: #2f2c2a; margin-top: .8rem; }
+    .day-date { margin-top: 1.2rem; font-size: 1.2rem; font-weight: 500; letter-spacing: .03em; }
+    .day-info { margin-top: .8rem; font-size: 1.05rem; line-height: 1.7; }
+    .day-btn { min-width: 0; margin-top: 1.6rem; padding: .85rem 2rem; font-size: .9rem; text-transform: none; letter-spacing: .04em; }
+    .map-link { display: inline-block; margin-top: .6rem; font-size: .95rem; letter-spacing: .04em; }
 
     /* RSVP */
     .venue-sketch { width: min(640px, 100%); margin: 0 auto; mix-blend-mode: multiply; }
@@ -226,6 +235,8 @@
       .member img, .remembered img { width: 130px; height: 130px; }
       .registries { grid-template-columns: 1fr; }
       .reg { padding: 2rem 1.4rem; }
+      .days { grid-template-columns: 1fr; margin-top: 3.5rem; }
+      .day-card + .day-card { border-left: 0; border-top: 1px solid var(--line); margin-top: 1rem; padding-top: 2.5rem; }
     }
 
     /* ============ 8. PRINT / SAVE AS PDF ============ */
@@ -333,49 +344,29 @@
   <section id="schedule" class="alt">
     <div class="title"><span class="script">The</span><h2>Wedding<br>Details</h2></div>
 
-    <ol class="timeline">
-      <li><time>12:00 PM</time><span class="dot"></span><h3>Guest Arrival &amp; Welcome Breakfast</h3>
-          <img src="images/breakfast.png" alt=""><p>Enjoy a buffet of breakfast nibbles on us before the ceremony begins</p></li>
-      <li><time>1:00 PM</time><span class="dot"></span><h3>Wedding Ceremony</h3>
-          <img src="images/ceremony.png" alt=""><p>Come and witness the moment we become husband and wife</p></li>
-      <li><time>3:00 PM</time><span class="dot"></span><h3>Cocktail Hour</h3>
-          <img src="images/cocktail.png" alt=""><p>Enjoy cocktails, canapés, and a moment to mingle</p></li>
-      <li><time>4:00 PM</time><span class="dot"></span><h3>Reception</h3>
-          <img src="images/reception.png" alt=""><p>Join us for dinner, speeches, and dancing as we celebrate</p></li>
-      <li><time>10:00 PM</time><span class="dot"></span><h3>Bride &amp; Groom Exit</h3>
-          <img src="images/exit.png" alt=""><p>Gather for our farewell as we depart as husband and wife</p></li>
-      <li><time>12:00 AM</time><span class="dot"></span><h3>Celebration Concludes</h3>
-          <img src="images/car.png" alt=""><p>Carriages to depart as our celebration draws to a close</p></li>
-    </ol>
-
-    <p class="times">
-      Guest Arrival &amp; Welcome Breakfast: 12pm<br>
-      Wedding Ceremony: 1pm<br>
-      Cocktail Hour: 3pm<br>
-      Reception: 4pm<br>
-      Bride &amp; Groom Exit: 10pm<br>
-      Celebration Concludes: 12:00am
-    </p>
-
-    <p class="display day">Tuesday, March 30, 2027</p>
-
-    <div class="event">
-      <div>
-        <svg class="hearts" viewBox="0 0 64 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
-          <path d="M22 31 C12 24 3 18 3 10 C3 5 7 2 11.5 2 C16 2 19 5 22 9 C25 5 28 2 32.5 2 C37 2 41 5 41 10 C41 18 32 24 22 31 Z"/>
-          <path d="M42 31 C32 24 23 18 23 10 C23 5 27 2 31.5 2 C36 2 39 5 42 9 C45 5 48 2 52.5 2 C57 2 61 5 61 10 C61 18 52 24 42 31 Z"/>
-        </svg>
-        <h3>The Wedding Day of Chinazo &amp; Chiebuka</h3>
-        <p class="when">12:00 pm - 12:00 am</p>
+        <!-- Two-day event: side-by-side cards -->
+    <div class="days">
+      <div class="day-card">
+        <p class="day-num">Day One</p>
+        <h3>Traditional Wedding</h3>
+        <p class="day-date">Monday 29th March 2027</p>
+        <p class="day-info">2:00pm – 8:00pm <br>Great Blunts House, Stock Brook Manor</p>
+        <a class="btn day-btn print-url" target="_blank" rel="noopener"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chinazo+%26+Chiebuka%27s+White+Wedding&dates=20270330T120000/20270331T000000&ctz=Europe/London&location=Stock+Brook+Manor+Golf+%26+Country+Club,+Queens+Park+Avenue,+Billericay+CM12+0SP&details=%23TheItanyis">Add to calendar</a>
       </div>
-      <div>
-        <p class="venue-name">Stock Brook Manor Golf &amp; Country Club</p>
-        <a class="address print-url" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=Stock+Brook+Manor+Golf+and+Country+Club+CM12+0SP">Queens Park Avenue, England CM12 0SP, United Kingdom</a>
-        <a class="btn" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=Stock+Brook+Manor+Golf+and+Country+Club+CM12+0SP">Map</a>
-        <a class="btn print-url" target="_blank" rel="noopener"
-           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chinazo+%26+Chiebuka%27s+Wedding&dates=20270330T120000/20270330T233000&ctz=Europe/London&location=Stock+Brook+Manor+Golf+%26+Country+Club,+Queens+Park+Avenue,+Billericay+CM12+0SP&details=%23TheItanyis">Add to calendar</a>
+      <div class="day-card">
+        <p class="day-num">Day Two</p>
+        <h3>White Wedding</h3>
+        <p class="day-date">Tuesday 30th March 2027</p>
+        <p class="day-info">12:00 pm – 00:00 am<br>Stock Brook Manor Golf &amp; Country Club</p>
+        <a class="btn day-btn print-url" target="_blank" rel="noopener"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chinazo+%26+Chiebuka%27s+White+Wedding&dates=20270330T120000/20270331T000000&ctz=Europe/London&location=Stock+Brook+Manor+Golf+%26+Country+Club,+Queens+Park+Avenue,+Billericay+CM12+0SP&details=%23TheItanyis">Add to calendar</a>
+      </div>
+    </div>
+      <svg class="hearts" style="width:64px; height:auto; display:block; margin:2rem auto 0;" viewBox="0 0 64 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+      <path d="M22 31 C12 24 3 18 3 10 C3 5 7 2 11.5 2 C16 2 19 5 22 9 C25 5 28 2 32.5 2 C37 2 41 5 41 10 C41 18 32 24 22 31 Z"/>
+      <path d="M42 31 C32 24 23 18 23 10 C23 5 27 2 31.5 2 C36 2 39 5 42 9 C45 5 48 2 52.5 2 C57 2 61 5 61 10 C61 18 52 24 42 31 Z"/>
+    </svg>
       </div>
     </div>
   </section>
@@ -384,9 +375,14 @@
   <section id="rsvp">
     <div class="title"><span class="script">Kindly</span><h2>RSVP</h2></div>
     <img class="venue-sketch" src="images/venue-sketch.jpg" alt="Sketch of Stock Brook Manor">
+        <p class="center" style="margin-top:1.6rem; font-size:1.1rem; line-height:1.7;">
+      <strong>Stock Brook Manor Golf &amp; Country Club<br></strong>
+      Queens Park Avenue, Billericay, Essex CM12 0SP<br>
+      <a class="map-link print-url" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Stock+Brook+Manor+Golf+and+Country+Club+CM12+0SP">Get Directions →</a>
+    </p>
 
     <div class="rsvp-card">
-      <p>Please RSVP by the 4th January 2027 using the form below.<br>
+      <p>Please RSVP using the form below.<br>
          If it doesn't load, you can <a class="print-url" target="_blank" rel="noopener"
          href="https://docs.google.com/forms/d/e/1FAIpQLSfyuAzoy8_gw3WZ5YWA90jFQOMV_r2YWV8M1b2_g1jGm_oguQ/viewform">open the RSVP form here</a>.</p>
       <iframe class="rsvp-frame" loading="lazy" title="RSVP form"
