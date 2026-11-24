@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chinazo & Chiebuka · 30 March 2027 · #TheItanyis</title>
+  <meta name="description" content="Wedding of Chinazo Onwuta and Chiebuka Itanyi, 30 March 2027, Essex, United Kingdom.">
+
+  <!-- Preview card when the link is shared on WhatsApp etc. -->
+  <meta property="og:title" content="Chinazo & Chiebuka · March 30, 2027">
+  <meta property="og:description" content="A love story designed by God. Everything you need for our big day. #TheItanyis">
+  <meta property="og:image" content="images/og.jpg">
+  <meta name="theme-color" content="#e9e5df">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============ 1. COLOURS & FONTS ============
+       Change these and the whole site updates. */
+    :root {
+      --bg:      #e9e5df;   /* Zola's warm greige background */
+      --bg-alt:  #e9e5df;   /* same as --bg (Zola uses one colour); make it lighter if you want stripes */
+      --ink:     #4a4744;   /* headings + leaf drawings */
+      --text:    #5a5653;   /* body text */
+      --muted:   #8a847e;
+      --button:  #5c5c5c;   /* Zola's dark grey RSVP button */
+      --line:    #d6d0c7;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --script: "Pinyon Script", "Snell Roundhand", cursive;
+      --sans:  "Jost", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.75; font-size: 17px; overflow-x: hidden; }
+    a { color: var(--ink); }
+    img { max-width: 100%; display: block; }
+
+    /* Shared heading style: big, uppercase, airy serif (like #THEITANYIS) */
+    .display { font-family: var(--serif); font-weight: 400; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); line-height: 1.1; }
+
+    /* ============ 2. NAVIGATION ============ */
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(233, 229, 223, .95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+    nav ul { list-style: none; display: flex; gap: 2rem; justify-content: center; overflow-x: auto; white-space: nowrap; padding: .95rem 1.2rem; scrollbar-width: none; }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav a { text-decoration: none; color: var(--text); font-size: 1.05rem; padding-bottom: .35rem; border-bottom: 2px solid transparent; }
+    nav a:hover { color: var(--ink); }
+    nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
+    @media (max-width: 760px) { nav ul { justify-content: flex-start; } }
+
+    /* ============ 3. LEAF DRAWINGS ============ */
+    .branch { position: absolute; color: var(--ink); pointer-events: none; z-index: 0; }
+    .hero > *:not(.branch), .story > *:not(.branch) { position: relative; z-index: 1; }
+    .branch svg { width: 100%; height: auto; overflow: visible; }
+    .sprig { width: 230px; margin: 0 auto; color: var(--ink); }
+
+    /* ============ 4. HERO ============ */
+    .hero { position: relative; text-align: center; padding: 5rem 1.5rem 4.5rem; overflow: hidden; }
+    .hero .branch { width: 420px; right: -110px; top: 60px; }
+    .hero h1 { font-size: clamp(3.2rem, 11vw, 7rem); }
+    .hero .amp { display: block; font-family: var(--sans); font-size: 1.4rem; margin: 2.6rem 0 2.4rem; color: var(--ink); }
+    .hero .date { font-size: clamp(2.2rem, 6vw, 4.2rem); margin-top: 6rem; letter-spacing: .02em; }
+    .hero .place { font-size: 1.35rem; margin-top: 1.6rem; }
+    .countdown { margin: 2.6rem 0 3.2rem; font-size: 1.35rem; display: flex; justify-content: center; flex-wrap: wrap; gap: .3rem 1.1rem; }
+
+    .btn {
+      display: inline-block; min-width: 260px; padding: .95rem 2rem; background: var(--button); color: #fff;
+      text-decoration: none; font-weight: 500; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--button);
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .85; }
+    .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); min-width: 0; font-size: .8rem; letter-spacing: .15em; }
+    .hero .btn { min-width: min(480px, 100%); padding: 1.1rem 2rem; font-size: 1.1rem; }
+
+    /* ============ 5. VIDEO + WELCOME ============ */
+    .story { position: relative; text-align: center; padding: 3rem 1.5rem 4rem; overflow: hidden; }
+    .story .branch { width: 360px; left: -90px; top: 300px; transform: scaleX(-1); }
+    .video { position: relative; width: min(420px, 88vw); aspect-ratio: 9 / 16; margin: 0 auto; background: #cfc9c0; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .story .tagline { font-size: 1.35rem; margin-top: 1.2rem; }
+    .story .sprig { margin-top: 7rem; }
+    .story h2 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin-top: 1.2rem; }
+    .welcome { max-width: 1000px; margin: 2.6rem auto 0; font-size: 1.3rem; line-height: 1.6; }
+    .welcome p + p { margin-top: 2rem; }
+    .welcome .heart { font-size: 1.6rem; }
+
+    .couple { max-width: 1100px; margin: 5rem auto 0; padding: 0 1.5rem; }
+
+    /* ============ 6. OTHER SECTIONS ============ */
+    section { padding: 5rem 1.5rem; }
+    section.alt { background: var(--bg-alt); }
+    .wrap { max-width: 780px; margin: 0 auto; }
+    section h2.display { font-size: clamp(2.2rem, 6vw, 3.2rem); text-align: center; }
+    .kicker { text-align: center; color: var(--muted); font-size: .8rem; letter-spacing: .25em; text-transform: uppercase; margin: .6rem 0 2.4rem; }
+    .section-sprig { width: 170px; margin: 0 auto 1rem; color: var(--ink); }
+    p + p { margin-top: 1rem; }
+    .center { text-align: center; }
+
+    /* "The" + heading, like Zola's section titles */
+    .title { text-align: center; margin-bottom: 3rem; }
+    .title .script { display: block; font-family: var(--script); font-size: 2.6rem; line-height: 1; color: var(--ink); }
+    .title h2 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.1; color: #2f2c2a; }
+    .title.script-only .script { font-size: clamp(3.6rem, 9vw, 5rem); }
+
+    /* Schedule: horizontal timeline (vertical on phones) */
+    .timeline { list-style: none; display: grid; grid-template-columns: repeat(6, 1fr); max-width: 1200px; margin: 0 auto; position: relative; }
+    .timeline::before { content: ""; position: absolute; top: 2.55rem; left: 8.33%; right: 8.33%; height: 2px; background: #1f1d1c; }
+    .timeline li { text-align: center; padding: 0 .5rem; display: flex; flex-direction: column; align-items: center; }
+    .timeline time { font-family: var(--serif); font-weight: 500; letter-spacing: .2em; font-size: 1.05rem; color: #2f2c2a; height: 1.9rem; }
+    .timeline .dot { width: 12px; height: 12px; background: #1f1d1c; margin: .35rem 0 1.1rem; position: relative; }
+    .timeline h3 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .22em; font-size: .92rem; line-height: 1.5; color: #2f2c2a; min-height: 4.2em; display: flex; align-items: center; }
+    .timeline img { height: 78px; width: auto; margin: .4rem 0 .9rem; }
+    .timeline p { font-size: .95rem; line-height: 1.4; }
+    .times { text-align: center; font-size: 1.2rem; line-height: 1.85; margin-top: 4rem; }
+
+    .day { text-align: center; font-size: clamp(2rem, 5vw, 3rem); margin-top: 5rem; letter-spacing: .03em; }
+    .event { display: grid; grid-template-columns: 1fr 1fr; max-width: 1050px; margin: 3.5rem auto 0; }
+    .event > div { padding: 1.5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .event > div + div { border-left: 1px solid var(--ink); }
+    .event .hearts { width: 64px; color: var(--ink); margin-bottom: 2rem; }
+    .event h3 { font-family: var(--sans); font-weight: 500; font-size: 1.8rem; line-height: 1.3; color: var(--ink); }
+    .event .when { margin-top: 1.6rem; font-size: 1.2rem; }
+    .event .venue-name { font-size: 1.2rem; }
+    .event .address { font-weight: 500; font-size: 1.15rem; }
+    .event .btn { min-width: 260px; margin-top: .9rem; text-transform: none; letter-spacing: .02em; font-size: 1.1rem; }
+    .event .btn:first-of-type { margin-top: 2rem; }
+
+    /* RSVP */
+    .venue-sketch { width: min(640px, 100%); margin: 0 auto; mix-blend-mode: multiply; }
+    .rsvp-details { text-align: center; margin-top: 1.6rem; font-size: 1.1rem; }
+    .rsvp-card { max-width: 840px; margin: 2.6rem auto 0; background: #e2ded7; border-radius: 18px; padding: 2.6rem 1.6rem 2rem; text-align: center; }
+    .rsvp-card p { font-size: 1.05rem; }
+    .rsvp-frame { width: 100%; height: 1250px; border: 0; background: transparent; margin-top: 1.8rem; border-radius: 8px; }
+    .small { font-size: .85rem; color: var(--muted); }
+
+    /* Dress code */
+    .dress-img { width: min(820px, 100%); margin: -1.6rem auto 0; mix-blend-mode: multiply; }
+    .dress-text { text-align: center; margin-top: 2.2rem; font-size: 1.1rem; }
+    .dress-text p + p { margin-top: 1.5rem; }
+
+    /* FAQs */
+    .faq { text-align: center; max-width: 960px; margin: 0 auto; }
+    .faq h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; letter-spacing: .07em; font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.2; color: var(--ink); margin-top: 3.4rem; }
+    .faq h3:first-child { margin-top: 0; }
+    .faq p { margin-top: .9rem; font-size: 1.05rem; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; max-width: 1100px; margin: 0 auto; }
+    .gallery button { border: 0; padding: 0; cursor: zoom-in; aspect-ratio: 1; overflow: hidden; background: var(--line); }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .gallery button:hover img { transform: scale(1.04); }
+    .lightbox { position: fixed; inset: 0; background: rgb(20, 18, 16); display: none; align-items: center; justify-content: center; z-index: 50; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 86vh; object-fit: contain; }
+    .lb-btn { position: absolute; background: none; border: 0; color: #fff; font-size: 2.4rem; cursor: pointer; padding: 1rem; opacity: .8; }
+    .lb-btn:hover { opacity: 1; }
+    .lb-close { top: .5rem; right: .8rem; }
+    .lb-prev { left: .3rem; }
+    .lb-next { right: .3rem; }
+    .lb-count { position: absolute; bottom: 1.2rem; color: #ddd; font-size: .8rem; letter-spacing: .2em; }
+
+    /* Wedding party: circle photos, two columns with a line between */
+    .party-top { text-align: center; margin-bottom: 3.2rem; }
+    .party { display: grid; grid-template-columns: 1fr 1fr; max-width: 1000px; margin: 0 auto; row-gap: 3.2rem; }
+    .member { text-align: center; padding: 0 1.5rem; }
+    .party .member:nth-child(odd) { border-right: 1px solid var(--ink); }
+    .member img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.2rem; }
+    .member h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; letter-spacing: .06em; font-size: clamp(1.5rem, 3.4vw, 2.4rem); line-height: 1.15; color: var(--ink); }
+    .member p { margin-top: .7rem; font-size: 1.05rem; }
+    .remembered { text-align: center; margin-top: 3.6rem; }
+    .remembered img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.2rem; }
+    .remembered h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; letter-spacing: .06em; font-size: clamp(1.7rem, 3.6vw, 2.6rem); line-height: 1.15; color: var(--ink); }
+    .remembered p { margin-top: .6rem; font-size: 1.05rem; }
+    .remembered .lines { line-height: 1.6; }
+
+    /* Registry */
+    .registry-intro { text-align: center; max-width: 560px; margin: 0 auto; }
+    .registry-intro h2 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .1em; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; color: var(--ink); }
+    .registry-intro .lead { margin-top: 1.6rem; font-size: 1rem; }
+    .registry-intro img { width: 160px; margin: 2rem auto .8rem; }
+    .registry-intro .love { font-family: var(--script); font-size: 2rem; line-height: 1; color: var(--ink); display: block; }
+    .registry-intro .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .14em; font-size: 1.1rem; color: var(--ink); }
+    .registry-intro .heart { width: 18px; margin: .4rem auto 0; color: var(--ink); }
+    .registry-intro .see { margin-top: 2rem; }
+    .registries { max-width: 1000px; margin: 4rem auto 0; display: grid; gap: 2.8rem; }
+    .reg { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
+    .reg h3 { font-family: var(--sans); font-weight: 500; font-size: 1.2rem; color: var(--ink); }
+    .reg p { font-size: 1.15rem; line-height: 1.6; margin-top: .2rem; }
+    .reg .btn { min-width: 210px; text-transform: none; letter-spacing: .02em; text-align: center; }
+    .reg .btn.dark { background: #333; border-color: #333; }
+
+    footer { text-align: center; padding: 4rem 1.5rem; }
+    footer .display { font-size: 2rem; margin-top: .8rem; }
+    footer small { display: block; margin-top: .6rem; font-size: .75rem; color: var(--muted); letter-spacing: .15em; }
+
+    /* ============ 7. PHONES ============ */
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .hero { padding-top: 3.5rem; }
+      .hero .branch { width: 170px; right: -75px; top: 330px; opacity: .45; }
+      .hero .amp { margin: 1.4rem 0; }
+      .hero .date { margin-top: 3.5rem; }
+      .hero .place, .countdown, .story .tagline { font-size: 1.1rem; }
+      .story .branch { display: none; }
+      .story .sprig { margin-top: 4rem; width: 180px; }
+      .welcome { font-size: 1.1rem; }
+      .timeline { grid-template-columns: 1fr; gap: 2.2rem; max-width: 340px; }
+      .timeline::before { display: none; }
+      .timeline time { height: auto; }
+      .timeline .dot { display: none; }
+      .timeline h3 { min-height: 0; }
+      .times { margin-top: 3rem; font-size: 1.05rem; }
+      .event { grid-template-columns: 1fr; }
+      .event > div + div { border-left: 0; border-top: 1px solid var(--line); }
+      .event h3 { font-size: 1.45rem; }
+      .rsvp-card { padding: 1.8rem 1rem; }
+      .dress-img { margin-top: -1rem; }
+      .party { grid-template-columns: 1fr; row-gap: 2.6rem; }
+      .party .member:nth-child(odd) { border-right: 0; }
+      .member img, .remembered img { width: 130px; height: 130px; }
+      .reg { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+      .reg p { font-size: 1.02rem; }
+    }
+
+    /* ============ 8. PRINT / SAVE AS PDF ============ */
+    @media print {
+      nav, .countdown, .video, .rsvp-frame, #gallery, .lightbox, .branch, .no-print { display: none !important; }
+      body { background: #fff; font-size: 12pt; }
+      section, .story, .hero { padding: 1.5rem 0; page-break-inside: avoid; background: #fff !important; }
+      .hero .date { margin-top: 2rem; }
+      .btn { background: none !important; color: var(--ink) !important; border: 0; padding: 0; min-width: 0 !important; display: block; }
+      .timeline { grid-template-columns: repeat(3, 1fr); row-gap: 1.5rem; }
+      .timeline::before, .timeline .dot { display: none; }
+      .print-url::after { content: " → " attr(href); font-size: 9pt; color: var(--muted); word-break: break-all; text-transform: none; letter-spacing: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable line-drawn leaf branch (drawn once, used several times below) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="leaf" viewBox="0 -10 64 20" overflow="visible">
+        <path d="M0 0 C12 -5 46 -8 72 -1 C50 3 18 5 0 0 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+        <path d="M4 0.3 C20 -3 46 -5 66 -1.2" fill="none" stroke="currentColor" stroke-width=".55"/>
+        <path d="M1 -0.6 C14 -5.5 44 -8.5 70 -2" fill="none" stroke="currentColor" stroke-width=".5"/>
+      </symbol>
+      <symbol id="branch" viewBox="0 0 300 300" overflow="visible">
+        <path d="M20 282 Q120 160 230 20" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M24 280 Q122 162 232 24" fill="none" stroke="currentColor" stroke-width=".6"/>
+        <use href="#leaf" width="64" height="20" transform="translate(60 231) rotate(-100) scale(1.25) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(60 231) rotate(-12) scale(1.3) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(102 181) rotate(-105) scale(1.35) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(102 181) rotate(-18) scale(1.45) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(144 129) rotate(-98) scale(1.25) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(144 129) rotate(-22) scale(1.3) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(186 75) rotate(-88) scale(1.05) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(186 75) rotate(-28) scale(1.1) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(226 24) rotate(-55) scale(.9) translate(0 -10)"/>
+      </symbol>
+      <symbol id="sprig" viewBox="0 0 240 80" overflow="visible">
+        <path d="M6 74 C50 46 120 40 232 16" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M10 73 C54 47 122 42 230 19" fill="none" stroke="currentColor" stroke-width=".6"/>
+        <use href="#leaf" width="64" height="20" transform="translate(70 50) rotate(-40) scale(1.1) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(80 48) rotate(8) scale(1.2) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(150 35) rotate(-22) scale(1.25) translate(0 -10)"/>
+        <use href="#leaf" width="64" height="20" transform="translate(196 25) rotate(-18) scale(.9) translate(0 -10)"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#dress-code">Dress Code</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#party">Wedding Party</a></li>
+      <li><a href="#registry">Registry</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HOME: HERO ===================== -->
+  <header class="hero" id="home">
+    <div class="branch" aria-hidden="true"><svg viewBox="0 0 300 300"><use href="#branch"/></svg></div>
+
+    <h1 class="display">Chinazo</h1>
+    <span class="amp">&amp;</span>
+    <h1 class="display">Chiebuka</h1>
+
+    <p class="display date">March 30, 2027</p>
+    <p class="place">Essex, United Kingdom</p>
+
+    <p class="countdown" id="countdown" aria-label="Countdown to the wedding"></p>
+
+    <a class="btn" href="#rsvp">RSVP</a>
+  </header>
+
+  <!-- ===================== HOME: VIDEO + WELCOME ===================== -->
+  <div class="story">
+    <div class="branch" aria-hidden="true"><svg viewBox="0 0 300 300"><use href="#branch"/></svg></div>
+
+    <div class="video">
+      <iframe src="https://player.vimeo.com/video/1245081672?title=0&byline=0&portrait=0&dnt=1"
+              title="#TheItanyis" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="tagline">A love story designed by God</p>
+
+    <div class="sprig" aria-hidden="true"><svg viewBox="0 0 240 80"><use href="#sprig"/></svg></div>
+    <h2 class="display">#TheItanyis</h2>
+
+    <div class="welcome">
+      <p>We’ve created this website to help you plan for our big day. You will find all of the need-to-know details right here!<br>
+         We’d love you to have a look around and learn more about us.</p>
+      <p>Please remember to RSVP by the 4th January 2027 so that we can have an accurate headcount for the day.</p>
+      <p>We cannot wait to share this special day with our favourite people. Thank you for all of your prayers, love, and support.</p>
+      <p class="heart" aria-hidden="true">🖤</p>
+      <p>Chinazo &amp; Chiebuka</p>
+    </div>
+
+    <img class="couple" src="images/couple.jpg" alt="Chinazo and Chiebuka smiling together on the beach, in black and white" width="1600" height="934">
+  </div>
+
+  <!-- ===================== SCHEDULE ===================== -->
+  <section id="schedule" class="alt">
+    <div class="title"><span class="script">The</span><h2>Wedding<br>Details</h2></div>
+
+    <ol class="timeline">
+      <li><time>12:00 PM</time><span class="dot"></span><h3>Guest Arrival &amp; Welcome Breakfast</h3>
+          <img src="images/icons/breakfast.png" alt=""><p>Enjoy a buffet of breakfast nibbles on us before the ceremony begins</p></li>
+      <li><time>1:00 PM</time><span class="dot"></span><h3>Wedding Ceremony</h3>
+          <img src="images/icons/ceremony.png" alt=""><p>Come and witness the moment we become husband and wife</p></li>
+      <li><time>3:00 PM</time><span class="dot"></span><h3>Cocktail Hour</h3>
+          <img src="images/icons/cocktail.png" alt=""><p>Enjoy cocktails, canapés, and a moment to mingle</p></li>
+      <li><time>4:00 PM</time><span class="dot"></span><h3>Reception</h3>
+          <img src="images/icons/reception.png" alt=""><p>Join us for dinner, speeches, and dancing as we celebrate</p></li>
+      <li><time>10:00 PM</time><span class="dot"></span><h3>Bride &amp; Groom Exit</h3>
+          <img src="images/icons/exit.png" alt=""><p>Gather for our farewell as we depart as husband and wife</p></li>
+      <li><time>11:30 PM</time><span class="dot"></span><h3>Celebration Concludes</h3>
+          <img src="images/icons/car.png" alt=""><p>Carriages to depart as our celebration draws to a close</p></li>
+    </ol>
+
+    <p class="times">
+      Guest Arrival &amp; Welcome Breakfast: 12pm<br>
+      Wedding Ceremony: 1pm<br>
+      Cocktail Hour: 3pm<br>
+      Reception: 4pm<br>
+      Bride &amp; Groom Exit: 10pm<br>
+      Celebration Concludes: 11:30pm
+    </p>
+
+    <p class="display day">Tuesday, March 30, 2027</p>
+
+    <div class="event">
+      <div>
+        <svg class="hearts" viewBox="0 0 64 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M22 31 C12 24 3 18 3 10 C3 5 7 2 11.5 2 C16 2 19 5 22 9 C25 5 28 2 32.5 2 C37 2 41 5 41 10 C41 18 32 24 22 31 Z"/>
+          <path d="M42 31 C32 24 23 18 23 10 C23 5 27 2 31.5 2 C36 2 39 5 42 9 C45 5 48 2 52.5 2 C57 2 61 5 61 10 C61 18 52 24 42 31 Z"/>
+        </svg>
+        <h3>The Wedding Day of Chinazo &amp; Chiebuka</h3>
+        <p class="when">12:00 pm - 11:30 pm</p>
+      </div>
+      <div>
+        <p class="venue-name">Stock Brook Manor Golf &amp; Country Club</p>
+        <a class="address print-url" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Stock+Brook+Manor+Golf+and+Country+Club+CM12+0SP">Queens Park Avenue, England CM12 0SP, United Kingdom</a>
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Stock+Brook+Manor+Golf+and+Country+Club+CM12+0SP">Map</a>
+        <a class="btn print-url" target="_blank" rel="noopener"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chinazo+%26+Chiebuka%27s+Wedding&dates=20270330T120000/20270330T233000&ctz=Europe/London&location=Stock+Brook+Manor+Golf+%26+Country+Club,+Queens+Park+Avenue,+Billericay+CM12+0SP&details=%23TheItanyis">Add to calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RSVP ===================== -->
+  <section id="rsvp">
+    <img class="venue-sketch" src="images/venue-sketch.jpg" alt="Sketch of Stock Brook Manor">
+    <p class="rsvp-details">Stock Brook Manor Golf &amp; Country Club<br>Tuesday 30th March 2027</p>
+
+    <div class="rsvp-card">
+      <p>Please RSVP by the 4th January 2027 using the form below.<br>
+         If it doesn't load, you can <a class="print-url" target="_blank" rel="noopener"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfyuAzoy8_gw3WZ5YWA90jFQOMV_r2YWV8M1b2_g1jGm_oguQ/viewform">open the RSVP form here</a>.</p>
+      <iframe class="rsvp-frame" loading="lazy" title="RSVP form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfyuAzoy8_gw3WZ5YWA90jFQOMV_r2YWV8M1b2_g1jGm_oguQ/viewform?embedded=true">Loading…</iframe>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="alt">
+    <h2 class="display">Gallery</h2>
+    <p class="kicker">Lagos, October 2026</p>
+    <div class="gallery" id="gallery-grid"></div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
+    <div class="lb-count" id="lb-count"></div>
+  </div>
+
+  <!-- ===================== DRESS CODE ===================== -->
+  <section id="dress-code">
+    <div class="title"><span class="script">The</span><h2>Dress Code</h2></div>
+    <img class="dress-img" src="images/dress-code.jpg" alt="Outfit inspiration: colourful gowns, and suits in light and summery shades">
+    <div class="dress-text">
+      <p>Black Tie Optional</p>
+      <p>We kindly encourage our favourite people to dress in summery hues on our special day.</p>
+      <p>Dress to impress! Bring on the colour and glamour! Ruffles, feathers and textures are encouraged.</p>
+    </div>
+  </section>
+
+  <!-- ===================== FAQS ===================== -->
+  <section id="faqs" class="alt">
+    <div class="title script-only"><span class="script">FAQ’s</span></div>
+    <div class="faq">
+      <h3>When is the RSVP deadline?</h3>
+      <p>Please RSVP by January 4th 2027.</p>
+      <h3>Can I bring a date?</h3>
+      <p>Unfortunately, due to venue capacity, we will not be able to accommodate any additional guests.</p>
+      <h3>Where can I park?</h3>
+      <p>There is plenty of free parking on the grounds.</p>
+      <h3>Is the wedding indoors or outdoors?</h3>
+      <p>Our wedding ceremony is outdoors (weather permitting!), but in case of rain, it will be held in the chapel on the grounds.</p>
+      <h3>Are kids welcome?</h3>
+      <p>As much as we love your little ones, we will not be including them in the ceremony or reception.</p>
+      <h3>I have a question not answered here, who do I contact?</h3>
+      <p>Please contact our lovely co-ordinator Fumini with your question at <a class="print-url" href="tel:+447487657878">+44 74876 57878</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===================== WEDDING PARTY ===================== -->
+  <section id="party">
+    <div class="member party-top"><img src="images/party/zion.jpg" alt="Zion Ojo" loading="lazy"><h3>Zion Ojo</h3><p>Bridal Party Executive Chair</p></div>
+    <div class="party">
+        <div class="member"><img src="images/party/njideka.jpg" alt="Njideka Onwuta" loading="lazy"><h3>Njideka Onwuta</h3><p>MoH / Bride's Sister</p></div>
+        <div class="member"><img src="images/party/samson.jpg" alt="Samson Oyedokun" loading="lazy"><h3>Samson Oyedokun</h3><p>Best Man</p></div>
+        <div class="member"><img src="images/party/patricia.jpg" alt="Patricia Odje" loading="lazy"><h3>Patricia Odje</h3><p>Chief Bridesmaid</p></div>
+        <div class="member"><img src="images/party/obinna.jpg" alt="Obinna Itanyi" loading="lazy"><h3>Obinna Itanyi</h3><p>Groomsman / Groom's Brother</p></div>
+        <div class="member"><img src="images/party/jite.jpg" alt="Jite Esiso" loading="lazy"><h3>Jite Esiso</h3><p>Bridesmaid</p></div>
+        <div class="member"><img src="images/party/ochuko-toweh.jpg" alt="Ochuko Toweh" loading="lazy"><h3>Ochuko Toweh</h3><p>Groomsman</p></div>
+        <div class="member"><img src="images/party/ochuko-oyeye.jpg" alt="Ochuko Oyeye" loading="lazy"><h3>Ochuko Oyeye</h3><p>Bridesmaid</p></div>
+        <div class="member"><img src="images/party/tochi.jpg" alt="Tochi Obayi" loading="lazy"><h3>Tochi Obayi</h3><p>Groomsman</p></div>
+        <div class="member"><img src="images/party/dunjoyin.jpg" alt="Dunjoyin Adeoye" loading="lazy"><h3>Dunjoyin Adeoye</h3><p>Bridesmaid</p></div>
+        <div class="member"><img src="images/party/dami.jpg" alt="Dami Buari" loading="lazy"><h3>Dami Buari</h3><p>Groomsman</p></div>
+        <div class="member"><img src="images/party/naomi.jpg" alt="Naomi Nkunga" loading="lazy"><h3>Naomi Nkunga</h3><p>Bridesmaid</p></div>
+        <div class="member"><img src="images/party/eric.jpg" alt="Eric Owusu" loading="lazy"><h3>Eric Owusu</h3><p>Groomsman</p></div>
+        <div class="member"><img src="images/party/divine.jpg" alt="Divine Maduagwu" loading="lazy"><h3>Divine Maduagwu</h3><p>Bridesmaid</p></div>
+        <div class="member"><img src="images/party/joshua.jpg" alt="Joshua Ouraga" loading="lazy"><h3>Joshua Ouraga</h3><p>Groomsman</p></div>
+    </div>
+    <div class="remembered">
+      <img src="images/party/sommie.jpg" alt="Sommie Maduagwu" loading="lazy">
+      <h3>Forever Remembered</h3>
+      <p>Sommie Maduagwu</p>
+      <p class="lines">In loving memory<br>Forever in our hearts<br>🖤</p>
+    </div>
+  </section>
+
+  <!-- ===================== REGISTRY ===================== -->
+  <section id="registry" class="alt">
+    <div class="registry-intro">
+      <h2>Our Gift Registry</h2>
+      <p class="lead">We are incredibly grateful for your generosity and support as we begin this exciting next chapter.</p>
+      <img src="images/registry-photo.jpg" alt="Chinazo and Chiebuka embracing on the beach">
+      <span class="love">Love</span>
+      <p class="names">Chinazo &amp; Chiebuka</p>
+      <svg class="heart" viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 20 C6 15.5 2 12 2 7.5 C2 4.5 4.3 2 7.2 2 C9.3 2 10.9 3.2 12 5 C13.1 3.2 14.7 2 16.8 2 C19.7 2 22 4.5 22 7.5 C22 12 18 15.5 12 20 Z"/></svg>
+      <p class="see">Please see links to our registries below:</p>
+    </div>
+
+    <div class="registries">
+      <div class="reg">
+        <div>
+          <h3>Cash Gift Registry</h3>
+          <p>We're moving to Nigeria immediately after the wedding, so we'd be incredibly grateful for a cash contribution towards our new life together. Any amount, big or small, would mean so much to us as we begin this exciting new chapter!</p>
+        </div>
+        <a class="btn print-url" target="_blank" rel="noopener" href="https://gift-registry.foreveritanyi.com/">See registry</a>
+      </div>
+      <div class="reg">
+        <div>
+          <h3>Physical Gift Registry</h3>
+          <p>Although we would prefer cash gifts, if you would still like to buy us a physical gift, please see our alternative gift registry here.</p>
+        </div>
+        <a class="btn dark print-url" target="_blank" rel="noopener" href="https://www.myregistry.com/wedding-registry/chinazo-onwuta-and-chiebuka-itanyi-london-london/5757338">See registry</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section-sprig" aria-hidden="true"><svg viewBox="0 0 240 80"><use href="#sprig"/></svg></div>
+    <p class="display">#TheItanyis</p>
+    <small>CHINAZO &amp; CHIEBUKA · 30.03.2027</small>
+  </footer>
+
+  <script>
+    /* ============ GALLERY PHOTOS ============
+       Stored inside the site (images/gallery), so they work in Nigeria.
+       Full-size photos: images/gallery/01.jpg ... 32.jpg
+       Square previews:  images/gallery/thumbs/01.jpg ... 32.jpg
+       To add more, drop new numbered files in both folders and raise TOTAL. */
+    const TOTAL = 32;
+    const photos = Array.from({ length: TOTAL }, (_, i) => {
+      const n = String(i + 1).padStart(2, "0");
+      return { thumb: `images/gallery/thumbs/${n}.jpg`, full: `images/gallery/${n}.jpg` };
+    });
+
+    const grid = document.getElementById("gallery-grid");
+    photos.forEach((p, i) => {
+      const b = document.createElement("button");
+      b.setAttribute("aria-label", `Open photo ${i + 1}`);
+      b.innerHTML = `<img src="${p.thumb}" alt="Chinazo and Chiebuka, photo ${i + 1}" loading="lazy">`;
+      b.addEventListener("click", () => openLb(i));
+      grid.appendChild(b);
+    });
+
+    // Lightbox: tap to open; arrows, swipe or keyboard to move
+    const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCount = document.getElementById("lb-count");
+    let current = 0;
+    function show(i) {
+      current = (i + photos.length) % photos.length;
+      lbImg.src = photos[current].full;
+      lbCount.textContent = `${current + 1} / ${photos.length}`;
+    }
+    function openLb(i) { show(i); lb.classList.add("open"); document.body.style.overflow = "hidden"; }
+    function closeLb() { lb.classList.remove("open"); document.body.style.overflow = ""; }
+    lb.querySelector(".lb-close").onclick = closeLb;
+    lb.querySelector(".lb-prev").onclick = e => { e.stopPropagation(); show(current - 1); };
+    lb.querySelector(".lb-next").onclick = e => { e.stopPropagation(); show(current + 1); };
+    lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+    document.addEventListener("keydown", e => {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    });
+    let startX = null;
+    lb.addEventListener("touchstart", e => { startX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", e => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+
+    // Countdown (like Zola's): days, hours, minutes, seconds until midnight UK time on the day
+    const target = new Date("2027-03-30T00:00:00+01:00");
+    const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+    function tick() {
+      const el = document.getElementById("countdown");
+      let s = Math.floor((target - new Date()) / 1000);
+      if (s <= 0) { el.textContent = "Today's the day!"; return; }
+      const d = Math.floor(s / 86400); s %= 86400;
+      const h = Math.floor(s / 3600);  s %= 3600;
+      const m = Math.floor(s / 60);    s %= 60;
+      el.innerHTML = [plural(d, "day"), plural(h, "hour"), plural(m, "minute"), plural(s, "second")].map(t => `<span>${t}</span>`).join("");
+    }
+    tick(); setInterval(tick, 1000);
+
+    // Underline the nav item for the section you're looking at
+    const links = [...document.querySelectorAll("nav a")];
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    links.forEach(a => { const t = document.querySelector(a.getAttribute("href")); if (t) spy.observe(t); });
+  </script>
+</body>
+</html>
