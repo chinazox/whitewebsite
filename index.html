@@ -86,6 +86,7 @@
     .welcome .heart { font-size: 1.6rem; }
 
     .couple { width: 100%; max-width: 1100px; margin: 5rem auto 0; }
+    .carosel { width: 100%; max-width: 420px; margin: 5rem auto 0; }
 
     /* ============ 6. OTHER SECTIONS ============ */
     section { padding: 5rem 1.5rem; }
@@ -211,6 +212,9 @@
     /* ============ 7. PHONES ============ */
     @media (max-width: 700px) {
       body { font-size: 16px; }
+      nav ul { gap: .6rem; padding: .75rem .7rem; justify-content: space-between; }
+      nav a { font-size: .75rem; padding-bottom: .2rem; }
+      .hide-sm { display: none; }
       .hero { padding-top: 3.5rem; }
       .hero .branch { width: 170px; right: -75px; top: 330px; opacity: .45; }
       .hero .amp { margin: 1.4rem 0; }
@@ -297,8 +301,8 @@
       <li><a href="#dress-code">Dress Code</a></li>
       <li><a href="#registry">Registry</a></li>
       <li><a href="#party">Wedding Party</a></li>
-      <li><a href="#faqs">FAQs</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#faqs">FAQs</a></li>
     </ul>
   </nav>
 
@@ -331,15 +335,18 @@
     <div class="sprig" aria-hidden="true"><svg viewBox="0 0 240 80"><use href="#sprig"/></svg></div>
     <h2 class="display">#TheItanyis</h2>
 
+    <img class="couple" src="images/couple.jpg" alt="Chinazo and Chiebuka smiling photo" width="1600" height="934">
+
     <div class="welcome">
       <p>We’ve created this website to help you plan for our big day.</p>
-      <p>Please remember to RSVP by the 4th January 2027 so that we can have an accurate headcount for the day.</p>
+      <p>Please remember to RSVP by the 4th January 2027 so that we can have an accurate headcount.</p>
       <p>Thank you for all of your prayers, love, and support.</p>
       <p class="heart" aria-hidden="true">🖤</p>
       <p>Chinazo &amp; Chiebuka</p>
     </div>
 
-    <img class="couple" src="images/couple.jpg" alt="Chinazo and Chiebuka smiling together on the beach, in black and white" width="1600" height="934">
+    <img class="carosel" src="images/carosel.jpeg" alt="Chinazo and Chiebuka on the beach">
+
   </div>
 
   <!-- ===================== SCHEDULE ===================== -->
@@ -468,7 +475,22 @@
     </div>
   </section>
 
-  <!-- ===================== FAQS ===================== -->
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="alt">
+    <div class="title"></span><h2>Gallery</h2></div>
+    <p class="kicker">Lagos, October 2026</p>
+    <div class="gallery" id="gallery-grid"></div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
+    <div class="lb-count" id="lb-count"></div>
+  </div>
+
+<!-- ===================== FAQS ===================== -->
   <section id="faqs" class="alt">
    <div class="title"><span class="script">FAQs</span></div>
     <div class="faq">
@@ -486,21 +508,6 @@
       <p>Please contact Chiebuka at +447384122433 (WhatsApp) or 07011888650 (Phone).</p>
     </div>
   </section>
-
-  <!-- ===================== GALLERY ===================== -->
-  <section id="gallery" class="alt">
-    <div class="title"></span><h2>Gallery</h2></div>
-    <p class="kicker">Lagos, October 2026</p>
-    <div class="gallery" id="gallery-grid"></div>
-  </section>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-    <button class="lb-btn lb-close" aria-label="Close">&times;</button>
-    <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
-    <img id="lb-img" alt="">
-    <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
-    <div class="lb-count" id="lb-count"></div>
-  </div>
 
   <footer>
     <div class="section-sprig" aria-hidden="true"><svg viewBox="0 0 240 80"><use href="#sprig"/></svg></div>
