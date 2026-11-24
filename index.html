@@ -183,12 +183,17 @@
     .registry-intro .names { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .14em; font-size: 1.1rem; color: var(--ink); }
     .registry-intro .heart { width: 18px; margin: .4rem auto 0; color: var(--ink); }
     .registry-intro .see { margin-top: 2rem; }
-    .registries { max-width: 1000px; margin: 4rem auto 0; display: grid; gap: 2.8rem; }
-    .reg { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
-    .reg h3 { font-family: var(--sans); font-weight: 500; font-size: 1.2rem; color: var(--ink); }
-    .reg p { font-size: 1.15rem; line-height: 1.6; margin-top: .2rem; }
-    .reg .btn { min-width: 210px; text-transform: none; letter-spacing: .02em; text-align: center; }
-    .reg .btn.dark { background: #333; border-color: #333; }
+        /* Registry cards: each registry is its own card with a big button underneath */
+    .registries { max-width: 1000px; margin: 3.5rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+    .reg { background: #f4f1ec; border: 1px solid var(--line); border-radius: 14px; padding: 2.4rem 2rem 2.2rem; text-align: center; display: flex; flex-direction: column; }
+    .reg .tag { display: block; font-size: .72rem; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
+    .reg h3 { font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: 1.6rem; line-height: 1.25; color: var(--ink); }
+    .reg p { font-size: 1.05rem; line-height: 1.6; margin: 1rem 0 1.8rem; flex: 1; }
+    .reg .btn { display: block; width: 100%; min-width: 0; padding: 1.1rem 1rem; font-size: 1rem; letter-spacing: .12em; border-radius: 6px; }
+    .reg .btn.outline { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+    .reg .btn.outline:hover { background: var(--ink); color: #fff; opacity: 1; }
+    .reg.preferred { border: 1.5px solid var(--ink); }
+    .reg > div { flex: 1; }
 
     footer { text-align: center; padding: 4rem 1.5rem; }
     footer .display { font-size: 2rem; margin-top: .8rem; }
@@ -219,8 +224,8 @@
       .party { grid-template-columns: 1fr; row-gap: 2.6rem; }
       .party .member:nth-child(odd) { border-right: 0; }
       .member img, .remembered img { width: 130px; height: 130px; }
-      .reg { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
-      .reg p { font-size: 1.02rem; }
+      .registries { grid-template-columns: 1fr; }
+      .reg { padding: 2rem 1.4rem; }
     }
 
     /* ============ 8. PRINT / SAVE AS PDF ============ */
@@ -271,15 +276,15 @@
   </svg>
 
   <nav>
-    <ul>
+        <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#rsvp">RSVP</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#dress-code">Dress Code</a></li>
-      <li><a href="#faqs">FAQs</a></li>
-      <li><a href="#party">Wedding Party</a></li>
       <li><a href="#registry">Registry</a></li>
+      <li><a href="#party">Wedding Party</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#gallery">Gallery</a></li>
     </ul>
   </nav>
 
@@ -377,6 +382,7 @@
 
   <!-- ===================== RSVP ===================== -->
   <section id="rsvp">
+    <div class="title"><span class="script">Kindly</span><h2>RSVP</h2></div>
     <img class="venue-sketch" src="images/venue-sketch.jpg" alt="Sketch of Stock Brook Manor">
 
     <div class="rsvp-card">
@@ -388,22 +394,7 @@
     </div>
   </section>
 
-  <!-- ===================== GALLERY ===================== -->
-  <section id="gallery" class="alt">
-    <h2 class="display">Gallery</h2>
-    <p class="kicker">Lagos, October 2026</p>
-    <div class="gallery" id="gallery-grid"></div>
-  </section>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-    <button class="lb-btn lb-close" aria-label="Close">&times;</button>
-    <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
-    <img id="lb-img" alt="">
-    <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
-    <div class="lb-count" id="lb-count"></div>
-  </div>
-
-  <!-- ===================== DRESS CODE ===================== -->
+<!-- ===================== DRESS CODE ===================== -->
   <section id="dress-code">
     <div class="title"><span class="script">The</span><h2>Dress Code</h2></div>
     <img class="dress-img" src="images/dress-code.jpg" alt="Outfit inspiration: colourful gowns, and suits in light and summery shades">
@@ -414,27 +405,38 @@
     </div>
   </section>
 
-  <!-- ===================== FAQS ===================== -->
-  <section id="faqs" class="alt">
-    <div class="title script-only"><span class="script">FAQ’s</span></div>
-    <div class="faq">
-      <h3>When is the RSVP deadline?</h3>
-      <p>Please RSVP by January 4th 2027.</p>
-      <h3>Can I bring a date?</h3>
-      <p>Unfortunately, due to venue capacity, we will not be able to accommodate any additional guests.</p>
-      <h3>Where can I park?</h3>
-      <p>There is plenty of free parking on the grounds.</p>
-      <h3>Is the wedding indoors or outdoors?</h3>
-      <p>Our wedding ceremony is outdoors (weather permitting!), but in case of rain, it will be held in the chapel on the grounds.</p>
-      <h3>Are kids welcome?</h3>
-      <p>As much as we love your little ones, we will not be including them in the ceremony or reception.</p>
-      <h3>I have a question not answered here, who do I contact?</h3>
-      <p>Please contact our lovely co-ordinator Fumini with your question at <a class="print-url" href="tel:+447487657878">+44 74876 57878</a>.</p>
+<!-- ===================== REGISTRY ===================== -->
+  <section id="registry" class="alt">
+    <div class="title"><span class="script">Our</span><h2>Gift Registry</h2></div>
+    <div class="registry-intro">
+      <p class="lead">We are incredibly grateful for your generosity and support as we begin this exciting next chapter.</p>
+      <img src="images/registry-photo.jpg" alt="Chinazo and Chiebuka embracing on the beach">
+      <span class="love">Love</span>
+      <p class="names">Chinazo &amp; Chiebuka</p>
+      <svg class="heart" viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 20 C6 15.5 2 12 2 7.5 C2 4.5 4.3 2 7.2 2 C9.3 2 10.9 3.2 12 5 C13.1 3.2 14.7 2 16.8 2 C19.7 2 22 4.5 22 7.5 C22 12 18 15.5 12 20 Z"/></svg>
+    </div>
+
+    <div class="registries">
+      <div class="reg">
+        <div>
+          <h3>Cash Gift Registry</h3>
+          <p>We're moving to Nigeria immediately after the wedding, so we'd be incredibly grateful for a cash contribution towards our new life together. Any amount, big or small, would mean so much to us!</p>
+        </div>
+        <a class="btn print-url" target="_blank" rel="noopener" href="https://gift-registry.foreveritanyi.com/">Open registry</a>
+      </div>
+      <div class="reg">
+        <div>
+          <h3>Physical Gift Registry</h3>
+          <p>Although we would prefer cash gifts, if you would still like to buy us a physical gift, please see our alternative gift registry here.</p>
+        </div>
+        <a class="btn dark print-url" target="_blank" rel="noopener" href="https://www.myregistry.com/wedding-registry/chinazo-onwuta-and-chiebuka-itanyi-london-london/5757338">Open registry</a>
+      </div>
     </div>
   </section>
 
   <!-- ===================== WEDDING PARTY ===================== -->
   <section id="party">
+    <div class="title"><span class="script">The</span><h2>Wedding<br>Party</h2></div>
     <div class="member party-top"><img src="images/zion.jpg" alt="Zion Ojo" loading="lazy"><h3>Zion Ojo</h3><p>Bridal Party Executive Chair</p></div>
     <div class="party">
         <div class="member"><img src="images/njideka.jpg" alt="Njideka Onwuta" loading="lazy"><h3>Njideka Onwuta</h3><p>MoH / Bride's Sister</p></div>
@@ -460,35 +462,39 @@
     </div>
   </section>
 
-  <!-- ===================== REGISTRY ===================== -->
-  <section id="registry" class="alt">
-    <div class="registry-intro">
-      <h2>Our Gift Registry</h2>
-      <p class="lead">We are incredibly grateful for your generosity and support as we begin this exciting next chapter.</p>
-      <img src="images/registry-photo.jpg" alt="Chinazo and Chiebuka embracing on the beach">
-      <span class="love">Love</span>
-      <p class="names">Chinazo &amp; Chiebuka</p>
-      <svg class="heart" viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 20 C6 15.5 2 12 2 7.5 C2 4.5 4.3 2 7.2 2 C9.3 2 10.9 3.2 12 5 C13.1 3.2 14.7 2 16.8 2 C19.7 2 22 4.5 22 7.5 C22 12 18 15.5 12 20 Z"/></svg>
-      <p class="see">Please see links to our registries below:</p>
-    </div>
-
-    <div class="registries">
-      <div class="reg">
-        <div>
-          <h3>Cash Gift Registry</h3>
-          <p>We're moving to Nigeria immediately after the wedding, so we'd be incredibly grateful for a cash contribution towards our new life together. Any amount, big or small, would mean so much to us as we begin this exciting new chapter!</p>
-        </div>
-        <a class="btn print-url" target="_blank" rel="noopener" href="https://gift-registry.foreveritanyi.com/">See registry</a>
-      </div>
-      <div class="reg">
-        <div>
-          <h3>Physical Gift Registry</h3>
-          <p>Although we would prefer cash gifts, if you would still like to buy us a physical gift, please see our alternative gift registry here.</p>
-        </div>
-        <a class="btn dark print-url" target="_blank" rel="noopener" href="https://www.myregistry.com/wedding-registry/chinazo-onwuta-and-chiebuka-itanyi-london-london/5757338">See registry</a>
-      </div>
+  <!-- ===================== FAQS ===================== -->
+  <section id="faqs" class="alt">
+   <div class="title"><span class="script">FAQs</span></div>
+    <div class="faq">
+      <h3>When is the RSVP deadline?</h3>
+      <p>Please RSVP by January 4th 2027.</p>
+      <h3>Can I bring a date?</h3>
+      <p>Unfortunately, due to venue capacity, we will not be able to accommodate any additional guests.</p>
+      <h3>Where can I park?</h3>
+      <p>There is plenty of free parking on the grounds.</p>
+      <h3>Is the wedding indoors or outdoors?</h3>
+      <p>Our wedding ceremony is outdoors (weather permitting!), but in case of rain, it will be held in the chapel on the grounds.</p>
+      <h3>Are kids welcome?</h3>
+      <p>As much as we love your little ones, we will not be including them in the ceremony or reception.</p>
+      <h3>I have a question not answered here, who do I contact?</h3>
+      <p>Please contact Chiebuka at +447384122433 (WhatsApp) or 07011888650 (Phone).</p>
     </div>
   </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="alt">
+    <div class="title"></span><h2>Gallery</h2></div>
+    <p class="kicker">Lagos, October 2026</p>
+    <div class="gallery" id="gallery-grid"></div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
+    <div class="lb-count" id="lb-count"></div>
+  </div>
 
   <footer>
     <div class="section-sprig" aria-hidden="true"><svg viewBox="0 0 240 80"><use href="#sprig"/></svg></div>
