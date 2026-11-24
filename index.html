@@ -85,7 +85,7 @@
     .welcome p + p { margin-top: 2rem; }
     .welcome .heart { font-size: 1.6rem; }
 
-    .couple { max-width: 1100px; margin: 5rem auto 0; padding: 0 1.5rem; }
+    .couple { width: 100%; max-width: 1100px; margin: 5rem auto 0; }
 
     /* ============ 6. OTHER SECTIONS ============ */
     section { padding: 5rem 1.5rem; }
@@ -230,9 +230,12 @@
       .event h3 { font-size: 1.45rem; }
       .rsvp-card { padding: 1.8rem 1rem; }
       .dress-img { margin-top: -1rem; }
-      .party { grid-template-columns: 1fr; row-gap: 2.6rem; }
-      .party .member:nth-child(odd) { border-right: 0; }
-      .member img, .remembered img { width: 130px; height: 130px; }
+      .party { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+      .member { padding: 0 .6rem; }
+      .member img, .remembered img { width: 96px; height: 96px; margin-bottom: .7rem; }
+      .member h3 { font-size: 1.05rem; letter-spacing: .04em; }
+      .member p { font-size: .8rem; line-height: 1.35; margin-top: .35rem; }
+      .remembered h3 { font-size: 1.4rem; }
       .registries { grid-template-columns: 1fr; }
       .reg { padding: 2rem 1.4rem; }
       .days { grid-template-columns: 1fr; margin-top: 3.5rem; }
@@ -329,10 +332,9 @@
     <h2 class="display">#TheItanyis</h2>
 
     <div class="welcome">
-      <p>We’ve created this website to help you plan for our big day. You will find all of the need-to-know details right here!<br>
-         We’d love you to have a look around and learn more about us.</p>
+      <p>We’ve created this website to help you plan for our big day.</p>
       <p>Please remember to RSVP by the 4th January 2027 so that we can have an accurate headcount for the day.</p>
-      <p>We cannot wait to share this special day with our favourite people. Thank you for all of your prayers, love, and support.</p>
+      <p>Thank you for all of your prayers, love, and support.</p>
       <p class="heart" aria-hidden="true">🖤</p>
       <p>Chinazo &amp; Chiebuka</p>
     </div>
@@ -352,7 +354,7 @@
         <p class="day-date">Monday 29th March 2027</p>
         <p class="day-info">2:00pm – 8:00pm <br>Great Blunts House, Stock Brook Manor</p>
         <a class="btn day-btn print-url" target="_blank" rel="noopener"
-           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chinazo+%26+Chiebuka%27s+White+Wedding&dates=20270330T120000/20270331T000000&ctz=Europe/London&location=Stock+Brook+Manor+Golf+%26+Country+Club,+Queens+Park+Avenue,+Billericay+CM12+0SP&details=%23TheItanyis">Add to calendar</a>
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chinazo+%26+Chiebuka%27s+Traditional+Wedding&dates=20270329T140000/20270329T200000&ctz=Europe/London&location=Great+Blunts+House,+Stock+Brook+Manor,+Queens+Park+Avenue,+Billericay+CM12+0SP&details=%23TheItanyis">Add to calendar</a>
       </div>
       <div class="day-card">
         <p class="day-num">Day Two</p>
@@ -403,6 +405,8 @@
       <p style="font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--muted);">
         For our Traditional Wedding:<br></p>
         <strong>Traditional attire in your assigned colour</strong></p>
+<br>
+        <hr style="width:60px; border:0; border-top:1px solid var(--ink); margin:2.4rem auto 2rem; opacity:.5;">
       
     </div>
   </section>
